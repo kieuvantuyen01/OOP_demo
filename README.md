@@ -1,5 +1,11 @@
 # Application to support learning English using Java
 
+## Author
+Group 1
+1. Nguyen Van Thanh - 22020001
+2. Nguyen Van Truong - 22020002
+3. Nguyen Van Dong - 22020003
+
 ## Description
 The application is designed to support learning English. The application is written in Java and uses the JavaFX library. The application is based on the MVC model. The application has two types of dictionaries: English-Vietnamese and Vietnamese-English. The application use E_V.txt and V_E.txt files to store data.
 1. The application is designed to support learning English.
@@ -7,6 +13,9 @@ The application is designed to support learning English. The application is writ
 3. The application is based on the MVC model.
 4. The application has two types of dictionaries: English-Vietnamese and Vietnamese-English.
 5. The application use E_V.txt and V_E.txt files to store data.
+
+## UML diagram
+![UML diagram](
 
 ## Installation
 1. Clone the project from the repository.
@@ -48,9 +57,6 @@ The application is designed to support learning English. The application is writ
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-[UET](https://uet.vnu.edu.vn/)
 
 ## Project status
 The project is completed.
