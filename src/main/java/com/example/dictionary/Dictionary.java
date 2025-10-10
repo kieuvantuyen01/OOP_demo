@@ -38,7 +38,7 @@ public class Dictionary extends Application {
         AnchorPane root = fxmlLoader.load(getClass().getResourceAsStream("dictionary-view.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Dictionary Demonstration");
+        primaryStage.setTitle("Dictionary KVT");
         primaryStage.show();
 
         // init components
