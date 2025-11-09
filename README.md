@@ -1,65 +1,189 @@
-# Application to support learning English using Java
+# Arkanoid Game - Object-Oriented Programming Project
 
 ## Author
-Group 1
-1. Nguyen Van Thanh - 22020001
-2. Nguyen Van Truong - 22020002
-3. Nguyen Van Dong - 22020003
+Group [Số nhóm] - Class [Mã lớp]
+1. [Họ tên 1] - [MSSV 1]
+2. [Họ tên 2] - [MSSV 2]
+3. [Họ tên 3] - [MSSV 3]
+4. [Họ tên 4] - [MSSV 4]
+
+**Instructor**: [Tên giảng viên]  
+**Semester**: [HK1/HK2 - Năm học]
+
+---
 
 ## Description
-The application is designed to support learning English. The application is written in Java and uses the JavaFX library. The application is based on the MVC model. The application has two types of dictionaries: English-Vietnamese and Vietnamese-English. The application use E_V.txt and V_E.txt files to store data.
-1. The application is designed to support learning English.
-2. The application is written in Java and uses the JavaFX library.
-3. The application is based on the MVC model.
-4. The application has two types of dictionaries: English-Vietnamese and Vietnamese-English.
-5. The application use E_V.txt and V_E.txt files to store data.
+This is a classic Arkanoid game developed in Java as a final project for Object-Oriented Programming course. The project demonstrates the implementation of OOP principles and design patterns.
 
-## UML diagram
-![UML diagram](
+**Key features:**
+1. The game is developed using Java 17+ with JavaFX/Swing for GUI.
+2. Implements core OOP principles: Encapsulation, Inheritance, Polymorphism, and Abstraction.
+3. Applies multiple design patterns: Singleton, Factory Method, Strategy, Observer, and State.
+4. Features multithreading for smooth gameplay and responsive UI.
+5. Includes sound effects, animations, and power-up systems.
+6. Supports save/load game functionality and leaderboard system.
+
+**Game mechanics:**
+- Control a paddle to bounce a ball and destroy bricks
+- Collect power-ups for special abilities
+- Progress through multiple levels with increasing difficulty
+- Score points and compete on the leaderboard
+
+---
+
+## UML Diagram
+
+### Class Diagram
+![Class Diagram](docs/uml/class-diagram.png)
+
+_Có thể sử dụng IntelliJ để generate ra Class Diagrams: https://www.youtube.com/watch?v=yCkTqNxZkbY_
+
+*Complete UML diagrams are available in the `docs/uml/` folder*
+
+---
+
+## Design Patterns Implementation
+
+_Có dùng hay không và dùng ở đâu_
+
+### 1. Singleton Pattern
+**Used in:** `GameManager`, `AudioManager`, `ResourceLoader`
+
+**Purpose:** Ensure only one instance exists throughout the application.
+
+---
+
+## Multithreading Implementation
+_Có dùng hay không và dùng như thế nào_
+
+The game uses multiple threads to ensure smooth performance:
+
+1. **Game Loop Thread**: Updates game logic at 60 FPS
+2. **Rendering Thread**: Handles graphics rendering (EDT for JavaFX Application Thread)
+3. **Audio Thread Pool**: Plays sound effects asynchronously
+4. **I/O Thread**: Handles save/load operations without blocking UI
+
+---
 
 ## Installation
+
 1. Clone the project from the repository.
 2. Open the project in the IDE.
 3. Run the project.
-4. If you want to change the data, you can change the E_V.txt and V_E.txt files.
 
 ## Usage
-1. Select mode: English-Vietnamese or Vietnamese-English to choose the dictionary.
-2. Search for a word in the dictionary and click the Search button, then the right side of the window will display the meaning of the word.
-3. To add a new word, click the Add button (Plus icon).
-4. To delete a word, click the Delete button (Minus icon).
-5. To edit a word, click the Edit button (Pencil icon).
-6. To save the changes, click the Save button (Disk icon).
-7. To pronounce the word, click the Pronounce button (Speaker icon).
-8. To practice, click the Practice button (Play icon), then the application will display a Game window.
-   + In the Game window, click the Start button to start the game.
-   + The application will display a word that is removed some letters, you need to enter the missing letters in the text box and click the Check button to check the answer.
-   + If the answer is correct, the application will display a new word and increase the score by 1.
-   + If the answer is incorrect, the application will display a new word and decrease the score by 1.
-   + To exit the game, click the Exit button (Cross icon).
-   + To play again, click the Play again button (Play icon).
-   + To save the score, click the Save button (Disk icon).
-   + To load the score, click the Load button (Folder icon).
-   + To reset the score, click the Reset button (Reset icon).
-9. To exit the application, click the Exit button (Cross icon).
+
+### Controls
+| Key | Action |
+|-----|--------|
+| `←` or `A` | Move paddle left |
+| `→` or `D` | Move paddle right |
+| `SPACE` | Launch ball / Shoot laser |
+| `P` or `ESC` | Pause game |
+| `R` | Restart game |
+| `Q` | Quit to menu |
+
+### How to Play
+1. **Start the game**: Click "New Game" from the main menu.
+2. **Control the paddle**: Use arrow keys or A/D to move left and right.
+3. **Launch the ball**: Press SPACE to launch the ball from the paddle.
+4. **Destroy bricks**: Bounce the ball to hit and destroy bricks.
+5. **Collect power-ups**: Catch falling power-ups for special abilities.
+6. **Avoid losing the ball**: Keep the ball from falling below the paddle.
+7. **Complete the level**: Destroy all destructible bricks to advance.
+
+### Power-ups
+| Icon | Name | Effect |
+|------|------|--------|
+| 🟦 | Expand Paddle | Increases paddle width for 10 seconds |
+| 🟥 | Shrink Paddle | Decreases paddle width for 10 seconds |
+| ⚡ | Fast Ball | Increases ball speed by 30% |
+| 🐌 | Slow Ball | Decreases ball speed by 30% |
+| 🎯 | Multi Ball | Spawns 2 additional balls |
+| 🔫 | Laser Gun | Shoot lasers to destroy bricks for 15 seconds |
+| 🧲 | Magnet | Ball sticks to paddle, launch with SPACE |
+| 🛡️ | Shield | Protects from losing one life |
+| 🔥 | Fire Ball | Ball passes through bricks for 12 seconds |
+
+### Scoring System
+- Normal Brick: 100 points
+- Strong Brick: 300 points
+- Explosive Brick: 500 points + nearby bricks
+- Power-up Collection: 50 points
+- Combo Multiplier: x2, x3, x4... for consecutive hits
+
+---
 
 ## Demo
-![Demo](
 
-## Future improvements
-1. Add more dictionaries.
-2. Add more complex games.
-3. Optimize the word lookup algorithm.
-4. Use a database to store data.
-5. Integrate the application with API of Google Translate to translate paragraphs and whole documents.
-6. Integrate the application with API of Google Speech to Text to convert speech to text.
-7. Improve the user interface.
+### Screenshots
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+**Main Menu**  
+![Main Menu](docs/screenshots/menu.png)
 
-## Project status
-The project is completed.
+**Gameplay**  
+![Gameplay](docs/screenshots/gameplay.png)
+
+**Power-ups in Action**  
+![Power-ups](docs/screenshots/powerups.png)
+
+**Leaderboard**  
+![Leaderboard](docs/screenshots/leaderboard.png)
+
+### Video Demo
+[![Video Demo](docs/screenshots/video-thumbnail.png)](docs/demo/gameplay.mp4)
+
+*Full gameplay video is available in `docs/demo/gameplay.mp4`*
+
+---
+
+## Future Improvements
+
+### Planned Features
+1. **Additional game modes**
+   - Time attack mode
+   - Survival mode with endless levels
+   - Co-op multiplayer mode
+
+2. **Enhanced gameplay**
+   - Boss battles at end of worlds
+   - More power-up varieties (freeze time, shield wall, etc.)
+   - Achievements system
+
+3. **Technical improvements**
+   - Migrate to LibGDX or JavaFX for better graphics
+   - Add particle effects and advanced animations
+   - Implement AI opponent mode
+   - Add online leaderboard with database backend
+
+---
+
+## Technologies Used
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| Java | 17+ | Core language |
+| JavaFX | 19.0.2 | GUI framework |
+| Maven | 3.9+ | Build tool |
+| Jackson | 2.15.0 | JSON processing |
+
+---
+
+## License
+
+This project is developed for educational purposes only.
+
+**Academic Integrity:** This code is provided as a reference. Please follow your institution's academic integrity policies.
+
+---
 
 ## Notes
-The application is written for educational purposes.
+
+- The game was developed as part of the Object-Oriented Programming with Java course curriculum.
+- All code is written by group members with guidance from the instructor.
+- Some assets (images, sounds) may be used for educational purposes under fair use.
+- The project demonstrates practical application of OOP concepts and design patterns.
+
+---
+
+*Last updated: [Ngày/Tháng/Năm]*
